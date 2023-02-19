@@ -10,9 +10,9 @@ st.write("Welcome to predicting stocks!")
 article = st.text_input('Todays news: ')
 
 
-tokenizer = AutoTokenizer.from_pretrained("icyGS/FinancePredictor")
+tokenizer = AutoTokenizer.from_pretrained("icyGS/StockPredictor")
 
-model = AutoModelForSequenceClassification.from_pretrained("icyGS/FinancePredictor")
+model = AutoModelForSequenceClassification.from_pretrained("icyGS/StockPredictor")
 
 classifier = pipeline("text-classification", model = model, tokenizer = tokenizer)
 prediction = classifier(article)
